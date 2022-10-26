@@ -105,7 +105,7 @@
 }
 
 .leftMenu ul li {
-  margin-bottom: 1rem;
+  margin-bottom: 0.7rem;
   transition: all 0.6s;
 }
 
@@ -114,16 +114,38 @@
   padding: 0.3rem;
   cursor: pointer;
   border-radius: 30px;
+  color: rgb(26, 140, 216);
 }
 
 @media screen and (max-width: 1160px) {
   .leftMenu {
     font-size: 0.8rem;
-    left: -20px;
+    left: -25px;
   }
 }
 @media screen and (max-width: 660px) {
   .leftMenu {
     display: none;
   }
+}
+
+.span {
+  color: black;
+  transition: all 0.7s;
+  margin-left: 3px;
+}
+
+.leftMenu ul li:hover .span {
+  color: white;
+}
+
+.socialMedia {
+  font-size: 3rem;
+  margin: 1rem;
+  transition: all 0.8s;
+  cursor: pointer;
+}
+
+.socialMedia:hover {
+  color: #f91880;
 }

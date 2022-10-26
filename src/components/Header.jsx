@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Modal from "react-bootstrap/Modal";
 
 import styles from "./Header.module.css";
 import Main from "./Main";
@@ -7,6 +8,9 @@ import {
   FaTwitter,
   FaHome,
   FaHashtag,
+  FaInstagram,
+  FaLinkedin,
+  FaGithub,
 } from "react-icons/fa";
 
 import { IoNotificationsSharp } from "react-icons/io5";
@@ -21,6 +25,7 @@ const Header = () => {
   const [pictureURL, setPictureURL] = useState("");
   const [newTweet, setNewTweet] = useState([]);
   const [profilePicURL, setProfilePicURL] = useState("");
+  const [show, setShow] = useState(false);
 
   const addTweet = () => {
     const newTweets = {
@@ -52,22 +57,24 @@ const Header = () => {
       <div className={styles.leftMenu}>
         <ul>
           <li>
-            <FaTwitter />
+            <FaTwitter /> <span className={styles.span}>Twitter</span>
           </li>
           <li>
-            <FaHome /> Home
+            <FaHome /> <span className={styles.span}>Home</span>
           </li>
           <li>
-            <FaHashtag /> Discover
+            <FaHashtag /> <span className={styles.span}>Discover</span>
           </li>
           <li>
-            <IoNotificationsSharp /> Notification
+            <IoNotificationsSharp />{" "}
+            <span className={styles.span}>Notification</span>
           </li>
           <li>
-            <BiMessageSquareDetail /> Message
+            <BiMessageSquareDetail />{" "}
+            <span className={styles.span}> Message</span>
           </li>
           <li>
-            <CgProfile /> Profile
+            <CgProfile /> <span className={styles.span}>Profile</span>
           </li>
         </ul>
       </div>
@@ -77,8 +84,52 @@ const Header = () => {
             <h1>Welcome {welcomeName || "Guest"}</h1>
           </div>
           <div className={styles.logoLike}>
-            <FaHandHoldingHeart />
+            <FaHandHoldingHeart onClick={() => setShow(true)} />
           </div>
+
+          {/*MODAL  */}
+          <Modal
+            show={show}
+            onHide={() => setShow(false)}
+            dialogClassName="modal-90w"
+            aria-labelledby="example-custom-modal-styling-title">
+            <Modal.Header closeButton className="bg-dark">
+              <Modal.Title id="example-custom-modal-styling-title">
+                Designed By: Captain Price
+              </Modal.Title>
+            </Modal.Header>
+            <Modal.Body className="bg-dark text-center">
+              <h4>Follow My Accounts</h4>
+              <FaTwitter
+                className={styles.socialMedia}
+                onClick={(e) =>
+                  (window.location.href = "https://twitter.com/murathoncu")
+                }
+              />{" "}
+              <FaInstagram
+                className={styles.socialMedia}
+                onClick={(e) =>
+                  (window.location.href =
+                    "https://www.instagram.com/m_hdavendigr/")
+                }
+              />{" "}
+              <FaLinkedin
+                className={styles.socialMedia}
+                onClick={(e) =>
+                  (window.location.href =
+                    "https://www.linkedin.com/in/murathudavendigaroncu/")
+                }
+              />{" "}
+              <FaGithub
+                className={styles.socialMedia}
+                onClick={(e) =>
+                  (window.location.href =
+                    "https://github.com/murathudavendigar")
+                }
+              />
+            </Modal.Body>
+          </Modal>
+          {/*MODAL  */}
         </div>
         <div className={styles.tweet}>
           <div className={styles.image}>
