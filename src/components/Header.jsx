@@ -32,7 +32,7 @@ const Header = () => {
   };
 
   // useEffect(() => {
-  //   addTweet();
+
   // }, []);
 
   return (
