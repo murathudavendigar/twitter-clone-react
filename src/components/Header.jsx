@@ -26,6 +26,7 @@ const Header = () => {
   const [newTweet, setNewTweet] = useState([]);
   const [profilePicURL, setProfilePicURL] = useState("");
   const [show, setShow] = useState(false);
+  const [haveTweet, setHaveTweet] = useState(false);
 
   const addTweet = () => {
     const newTweets = {
@@ -34,6 +35,7 @@ const Header = () => {
       userName: userName,
       pictureURL: pictureURL,
       profilePicURL: profilePicURL,
+      haveTweet: true,
     };
     // console.log(newTweets);
 
@@ -44,8 +46,7 @@ const Header = () => {
     setUserName("");
     setPictureURL("");
     setProfilePicURL("");
-
-    <Main />;
+    setHaveTweet(false);
   };
 
   // useEffect(() => {

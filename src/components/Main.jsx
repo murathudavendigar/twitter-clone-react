@@ -35,17 +35,20 @@ const Main = ({ newTweet, addTweet }) => {
     } catch (error) {}
 
     setFirstAdd(firstAdd + 1);
+
     if (firstAdd === 0) {
       defaultAdd();
-      console.log(firstAdd);
     } else {
       addArray();
+
       if (
+        newTweet.haveTweet &&
         newTweet.tweet !== "" &&
         newTweet.name !== "" &&
         newTweet.userName !== ""
       ) {
         addUserTweet();
+        newTweet.haveTweet = false;
       }
     }
   };
