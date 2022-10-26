@@ -159,7 +159,7 @@ const Header = () => {
               <input
                 type="text"
                 className={styles.input}
-                placeholder="Enter Userame"
+                placeholder="Enter Username"
                 value={userName}
                 onChange={(e) => setUserName(e.target.value)}
               />

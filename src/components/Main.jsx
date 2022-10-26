@@ -13,6 +13,7 @@ const Main = ({ newTweet, addTweet }) => {
   const [showItem, setShowItem] = useState([]);
   const [tweetPic, setTweetPic] = useState("");
   const [userInfo, setUserInfo] = useState([]);
+  const [firstAdd, setFirstAdd] = useState(0);
 
   //! URL
   const urlUser = "https://randomuser.me/api/";
@@ -32,9 +33,15 @@ const Main = ({ newTweet, addTweet }) => {
       const dataQuotes = await axios(urlQuotes);
       setQuotes(dataQuotes?.data?.content);
     } catch (error) {}
-    addArray();
-    if (newTweet.tweet !== "") {
-      addUserTweet();
+
+    if (firstAdd === 0) {
+      defaultAdd();
+      setFirstAdd(firstAdd + 1);
+    } else {
+      addArray();
+      if (newTweet.tweet !== "") {
+        addUserTweet();
+      }
     }
   };
   // const getQuotes = async () => {
@@ -76,25 +83,6 @@ const Main = ({ newTweet, addTweet }) => {
   const addArray = () => {
     //! PUSH INFO
 
-    if (items.length === 0) {
-      setItems([
-        {
-          id: items.length,
-          firstName: "Captain",
-          lastName: "Price",
-          userName: "captainprice",
-          profilePic:
-            "https://ca.slack-edge.com/T03LBL87DA8-U03NVJBQ8NP-4a239a1dcb99-512",
-          pictureLarge:
-            "https://ca.slack-edge.com/T03LBL87DA8-U03NVJBQ8NP-4a239a1dcb99-512",
-          quotes: "Welcome Twitter Clone Page!!",
-          commentCount: 999,
-          retweetCount: 999,
-          likeCount: 999,
-        },
-      ]);
-    }
-
     if (items.length > 0) {
       setItems([
         ...items,
@@ -113,6 +101,27 @@ const Main = ({ newTweet, addTweet }) => {
         },
       ]);
     }
+  };
+
+  //! DEFAULT ADD
+
+  const defaultAdd = () => {
+    setItems([
+      {
+        id: items.length,
+        firstName: "Captain",
+        lastName: "Price",
+        userName: "captainprice",
+        profilePic:
+          "https://ca.slack-edge.com/T03LBL87DA8-U03NVJBQ8NP-4a239a1dcb99-512",
+        pictureLarge:
+          "https://ca.slack-edge.com/T03LBL87DA8-U03NVJBQ8NP-4a239a1dcb99-512",
+        quotes: "Welcome Twitter Clone Page!!",
+        commentCount: 999,
+        retweetCount: 999,
+        likeCount: 999,
+      },
+    ]);
   };
 
   //! ADD USER TWEET
