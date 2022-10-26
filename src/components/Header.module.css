@@ -120,12 +120,22 @@
 @media screen and (max-width: 1160px) {
   .leftMenu {
     font-size: 0.8rem;
-    left: -25px;
+    left: -15px;
   }
 }
 @media screen and (max-width: 660px) {
-  .leftMenu {
+  .span {
     display: none;
+  }
+  .logoLike {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 463px) {
+  .button {
+    margin-top: 1rem;
+    width: 100%;
   }
 }
 

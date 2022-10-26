@@ -81,7 +81,7 @@ const Header = () => {
       <div className={styles.container}>
         <div className={styles.headerTop}>
           <div>
-            <h1>Welcome {welcomeName || "Guest"}</h1>
+            <h2>Welcome {welcomeName || "Guest"}</h2>
           </div>
           <div className={styles.logoLike}>
             <FaHandHoldingHeart onClick={() => setShow(true)} />
