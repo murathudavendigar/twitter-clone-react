@@ -49,9 +49,6 @@ const Main = ({ newTweet, addTweet }) => {
   //   getUser();
   // }, 7000);
 
-  //! ADD USER TWEET
-  // console.log(newTweet.tweet !== "");
-
   const addUserTweet = () => {
     setItems([
       ...items,
@@ -118,9 +115,13 @@ const Main = ({ newTweet, addTweet }) => {
     }
   };
 
+  //! ADD USER TWEET
+  // if (newTweet.tweet !== "") {
+  //   addUserTweet();
+  // }
+
   //! USE_EFFECT
   useEffect(() => {
-    addTweet();
     getUser();
   }, []);
 
