@@ -92,7 +92,8 @@ const Main = ({ newTweet, addTweet }) => {
           likeCount: Math.ceil(Math.random() * 300),
         },
       ]);
-    } else if (items.length === 0) {
+    }
+    if (items.length === 0) {
       setItems([
         {
           id: items.length,

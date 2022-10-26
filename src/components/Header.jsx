@@ -38,7 +38,7 @@ const Header = () => {
     // console.log(newTweets);
 
     setNewTweet(newTweets);
-    setWelcomeName(name);
+    setWelcomeName(name === "" ? welcomeName : name);
     setTweet("");
     setName("");
     setUserName("");
