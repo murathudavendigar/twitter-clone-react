@@ -44,6 +44,8 @@ const Header = () => {
     setUserName("");
     setPictureURL("");
     setProfilePicURL("");
+
+    <Main />;
   };
 
   // useEffect(() => {
@@ -142,7 +144,7 @@ const Header = () => {
               id=""
               cols="80"
               rows="2"
-              placeholder="What's happening ?"
+              placeholder="*What's happening ?"
               wrap="hard"
               value={tweet}
               onChange={(e) => setTweet(e.target.value)}
@@ -151,7 +153,7 @@ const Header = () => {
               <input
                 type="text"
                 className={styles.input}
-                placeholder="Enter Name"
+                placeholder="*Enter Name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 required
@@ -159,9 +161,10 @@ const Header = () => {
               <input
                 type="text"
                 className={styles.input}
-                placeholder="Enter Username"
+                placeholder="*Enter Username"
                 value={userName}
                 onChange={(e) => setUserName(e.target.value)}
+                required
               />
               <input
                 type="text"

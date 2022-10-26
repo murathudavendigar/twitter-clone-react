@@ -34,12 +34,17 @@ const Main = ({ newTweet, addTweet }) => {
       setQuotes(dataQuotes?.data?.content);
     } catch (error) {}
 
+    setFirstAdd(firstAdd + 1);
     if (firstAdd === 0) {
       defaultAdd();
-      setFirstAdd(firstAdd + 1);
+      console.log(firstAdd);
     } else {
       addArray();
-      if (newTweet.tweet !== "") {
+      if (
+        newTweet.tweet !== "" &&
+        newTweet.name !== "" &&
+        newTweet.userName !== ""
+      ) {
         addUserTweet();
       }
     }
@@ -178,6 +183,12 @@ const Main = ({ newTweet, addTweet }) => {
                             ? elements.lastName
                             : userInfo[showItem]?.name?.last}
                         </h5>
+                        <h6 className="ms-3 text-primary mt-2">
+                          @
+                          {showItem > userInfo.length
+                            ? elements.userName
+                            : userInfo[showItem]?.login?.username}
+                        </h6>
                         <button
                           type="button"
                           className="btn-close"
