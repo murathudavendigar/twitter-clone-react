@@ -1,7 +1,17 @@
 import { useEffect, useState } from "react";
+
 import styles from "./Header.module.css";
 import Main from "./Main";
-import { FaHandHoldingHeart } from "react-icons/fa";
+import {
+  FaHandHoldingHeart,
+  FaTwitter,
+  FaHome,
+  FaHashtag,
+} from "react-icons/fa";
+
+import { IoNotificationsSharp } from "react-icons/io5";
+import { BiMessageSquareDetail } from "react-icons/bi";
+import { CgProfile } from "react-icons/cg";
 
 const Header = () => {
   const [tweet, setTweet] = useState("");
@@ -35,8 +45,32 @@ const Header = () => {
 
   // }, []);
 
+  //! POPOVER DEMO
+
   return (
     <>
+      <div className={styles.leftMenu}>
+        <ul>
+          <li>
+            <FaTwitter />
+          </li>
+          <li>
+            <FaHome /> Home
+          </li>
+          <li>
+            <FaHashtag /> Discover
+          </li>
+          <li>
+            <IoNotificationsSharp /> Notification
+          </li>
+          <li>
+            <BiMessageSquareDetail /> Message
+          </li>
+          <li>
+            <CgProfile /> Profile
+          </li>
+        </ul>
+      </div>
       <div className={styles.container}>
         <div className={styles.headerTop}>
           <div>

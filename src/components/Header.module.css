@@ -80,9 +80,50 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  width: 100%;
 }
 
 .logoLike {
-  display: flex;
-  justify-content: end;
+  font-size: 2.5rem;
+  transition: all 0.5s;
+}
+
+.logoLike:hover {
+  color: #f91880;
+  cursor: pointer;
+}
+
+.leftMenu {
+  position: fixed;
+  left: 10px;
+  font-size: 1.3rem;
+  top: 50px;
+}
+
+.leftMenu ul {
+  list-style: none;
+}
+
+.leftMenu ul li {
+  margin-bottom: 1rem;
+  transition: all 0.6s;
+}
+
+.leftMenu ul li:hover {
+  background-color: rgb(24, 24, 24);
+  padding: 0.3rem;
+  cursor: pointer;
+  border-radius: 30px;
+}
+
+@media screen and (max-width: 1160px) {
+  .leftMenu {
+    font-size: 0.8rem;
+    left: -20px;
+  }
+}
+@media screen and (max-width: 660px) {
+  .leftMenu {
+    display: none;
+  }
 }
