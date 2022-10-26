@@ -1,10 +1,9 @@
 import { Modal } from "bootstrap";
 import Form from "react-bootstrap/Form";
-import { useNavigate } from "react-router-dom";
+
 import styles from "./UserProfile.module.css";
 
 const UserProfile = () => {
-  const navigate = useNavigate();
   return (
     <div className={styles.AuthFormContainer}>
       <form className={styles.AuthForm}>
