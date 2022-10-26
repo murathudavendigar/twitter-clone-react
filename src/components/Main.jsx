@@ -240,7 +240,7 @@ const Main = ({ newTweet, addTweet }) => {
                   </span>
                 </div>
                 <div className={styles.faShare}>
-                  <FaShare onClick={(e) => console.log(elements.quotes)} />
+                  <FaShare />
                 </div>
               </div>
             </div>
