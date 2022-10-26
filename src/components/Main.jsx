@@ -32,7 +32,6 @@ const Main = ({ newTweet, addTweet }) => {
       const dataQuotes = await axios(urlQuotes);
       setQuotes(dataQuotes?.data?.content);
     } catch (error) {}
-
     addArray();
     if (newTweet.tweet !== "") {
       addUserTweet();
@@ -44,6 +43,11 @@ const Main = ({ newTweet, addTweet }) => {
   //     setQuotes(dataQuotes?.data?.content);
   //   } catch (error) {}
   // };
+
+  //! SET INTERVAL
+  // setInterval(() => {
+  //   getUser();
+  // }, 7000);
 
   //! ADD USER TWEET
   // console.log(newTweet.tweet !== "");
@@ -75,24 +79,6 @@ const Main = ({ newTweet, addTweet }) => {
   const addArray = () => {
     //! PUSH INFO
 
-    if (items.length > 0) {
-      setItems([
-        ...items,
-        {
-          id: items.length,
-          firstName: user?.name?.first,
-          lastName: user?.name?.last,
-          userName: user?.login?.username,
-          profilePic: user?.picture?.thumbnail,
-          pictureLarge: user?.picture?.large,
-          quotes: quotes,
-          tweetPic: tweetPic,
-          commentCount: Math.ceil(Math.random() * 100),
-          retweetCount: Math.ceil(Math.random() * 200),
-          likeCount: Math.ceil(Math.random() * 300),
-        },
-      ]);
-    }
     if (items.length === 0) {
       setItems([
         {
@@ -108,6 +94,25 @@ const Main = ({ newTweet, addTweet }) => {
           commentCount: 999,
           retweetCount: 999,
           likeCount: 999,
+        },
+      ]);
+    }
+
+    if (items.length > 0) {
+      setItems([
+        ...items,
+        {
+          id: items.length,
+          firstName: user?.name?.first,
+          lastName: user?.name?.last,
+          userName: user?.login?.username,
+          profilePic: user?.picture?.thumbnail,
+          pictureLarge: user?.picture?.large,
+          quotes: quotes,
+          tweetPic: tweetPic,
+          commentCount: Math.ceil(Math.random() * 100),
+          retweetCount: Math.ceil(Math.random() * 200),
+          likeCount: Math.ceil(Math.random() * 300),
         },
       ]);
     }
