@@ -140,7 +140,7 @@ const Main = ({ newTweet, addTweet }) => {
   //! USE_EFFECT
   useEffect(() => {
     getUser();
-  }, []);
+  }, [newTweet]);
 
   return (
     <div className={styles.container}>
