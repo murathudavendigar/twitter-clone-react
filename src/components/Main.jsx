@@ -116,13 +116,13 @@ const Main = ({ newTweet, addTweet }) => {
     setItems([
       {
         id: items.length,
-        firstName: "Captain",
-        lastName: "Price",
+        firstName: "Murat Hüdavendigâr",
+        lastName: "Öncü",
         userName: "captainprice",
         profilePic:
-          "https://ca.slack-edge.com/T03LBL87DA8-U03NVJBQ8NP-4a239a1dcb99-512",
+          "https://lh3.googleusercontent.com/a/ALm5wu1JY8Q5bFwRKo8FuVZc19ysPJ6peGZmWyGOvQJk=s288-p-rw-no",
         pictureLarge:
-          "https://ca.slack-edge.com/T03LBL87DA8-U03NVJBQ8NP-4a239a1dcb99-512",
+          "https://lh3.googleusercontent.com/a/ALm5wu1JY8Q5bFwRKo8FuVZc19ysPJ6peGZmWyGOvQJk=s288-p-rw-no",
         quotes: "Welcome Twitter Clone Page!!",
         commentCount: 999,
         retweetCount: 999,
