@@ -3,7 +3,6 @@ import { FaComment, FaRetweet, FaHeart, FaShare } from "react-icons/fa";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Modal } from "bootstrap";
-import FsLightbox from "fslightbox-react";
 
 const Main = ({ newTweet, addTweet }) => {
   //! HOOK
